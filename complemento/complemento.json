@@ -1,0 +1,103 @@
+{
+  "__future__.annotations": {
+    "descricao": "melhora compatibilidade de tipos no Python",
+    "status": null
+  },
+  "argparse": {
+    "descricao": "lê argumentos do terminal",
+    "status": "x"
+  },
+  "asyncio": {
+    "descricao": "executa várias tarefas ao mesmo tempo",
+    "status": "x"
+  },
+  "hashlib": {
+    "descricao": "gera hashes (md5, sha256...)",
+    "status": "x"
+  },
+  "json": {
+    "descricao": "trabalha com JSON",
+    "status": "x"
+  },
+  "random": {
+    "descricao": "gera valores aleatórios",
+    "status": null
+  },
+  "re": {
+    "descricao": "trabalha com regex/padrões de texto",
+    "status": "Não sei ainda"
+  },
+  "signal": {
+    "descricao": "captura sinais do sistema (CTRL+C)",
+    "status": null
+  },
+  "ssl": {
+    "descricao": "trabalha com HTTPS e certificados SSL",
+    "status": "Talvez"
+  },
+  "sys": {
+    "descricao": "acesso ao sistema e argumentos do Python",
+    "status": "Não vejo utilidade ainda"
+  },
+  "time": {
+    "descricao": "controla tempo e pausas",
+    "status": "x"
+  },
+  "dataclass": {
+    "descricao": "cria classes organizadas automaticamente",
+    "status": "Talvez"
+  },
+  "field": {
+    "descricao": "adiciona configurações extras em dataclasses",
+    "status": "x",
+    "extra": "permite configurar melhor os atributos de uma dataclass ( idade: int = field(default=18))"
+  },
+  "asdict": {
+    "descricao": "transforma dataclass em dicionário (que pode tranformar em json)",
+    "status": "x"
+  },
+  "Path": {
+    "descricao": "manipula arquivos e pastas",
+    "status": "Talvez"
+  },
+  "Any": {
+    "descricao": "aceita literalmente qualquer valor",
+    "status": "x"
+  },
+  "urljoin": {
+    "descricao": "junta URLs",
+    "status": "Não sei ainda"
+  },
+  "urlparse": {
+    "descricao": "separa/analisar partes de URLs",
+    "status": "x"
+  },
+  "aiohttp": {
+    "descricao": "faz várias requests HTTP ao mesmo tempo sem esperar uma terminar para começar outra",
+    "status": "x"
+  },
+  "ClientSession": {
+    "descricao": "mantém sessão HTTP persistente",
+    "status": "Talvez"
+  },
+  "ClientTimeout": {
+    "descricao": "define tempo limite da conexão",
+    "status": "Talvez/Futuro"
+  },
+  "TCPConnector": {
+    "descricao": "controla conexões TCP",
+    "status": "Talvez/Futuro"
+  },
+  "BeautifulSoup": {
+    "descricao": "lê/analisar HTML",
+    "status": "Talvez/Futuro"
+  },
+  "tqdm_asyncio": {
+    "descricao": "barra de progresso async",
+    "status": "Talvez"
+  },
+  "tqdm": {
+    "descricao": "barra de progresso normal",
+    "status": "Talvez"
+  }
+}
