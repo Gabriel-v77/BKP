@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 import sys
 
 #dominio do site/endereço 
-page_title = ''
+
 url = ''
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
 
@@ -36,9 +36,13 @@ def bpk(username, password):
     except Exception as erro:
         print("Erro no proxy:")
         print(erro)
+        return
+    
 
-    soup = BeautifulSoup(r.text, 'html.parser')
-    if soup.title.text == page_title: #compara resposta esprada
+    texto_resposta = r.text.lower()
+    mensagens_erro = ["inválido", "incorreta", "dados incorretos", "erro", "failed", "invalid"]
+    houve_erro = any(erro in texto_resposta for erro in mensagens_erro)
+    if r.status_code == 302 or (r.status_code == 200 and not houve_erro): #compara resposta esprada
         print('|===========================================================================|')
         print(f"        [+] Combinação encontrada com sucesso {username} : {password} [+]")
         print('|===========================================================================|')
@@ -50,8 +54,8 @@ def main():
     user_input = str(input('Type username here if you have one, if not press enter >> ') or 'none') #pede para informar um user caso não "none"
     
     if user_input == 'none':        
-        users = str(input('file with users >> '))# input wordlist user
-        passwords = str(input('with passwords >> '))#input wordlist pass
+        users = str(input('Arquivo com usuarios >> '))# input wordlist user
+        passwords = str(input('Arquivo com senha >> '))#input wordlist pass
         print('\n')   
         passwords = [w.strip() for w in open(passwords, 'r').readlines()] #abre o arquivo e le tudo com um loop
         users = [u.strip() for u in open(users, 'r').readlines()] #abre o arquivo e le tudo com um loop 
@@ -68,8 +72,8 @@ def main():
                 user_index += 1
     else:
         # Este else acontece quando o usuário especificou um nome de usuário        
-        passwords = str(input('Specify a folder with passwords >> '))     
+        passwords = str(input('Especifique arquivo com senhas >> '))     
         passwords = [w.strip() for w in open(passwords, 'r').readlines()]
         for password in passwords:
             bpk(user_input, password)
-            print(f'Tried with >> {user_input} : {password} \n')
+            print(f'Tentativa >> {user_input} : {password} \n')
