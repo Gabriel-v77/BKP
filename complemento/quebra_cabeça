@@ -1,1 +1,0 @@
-requests.post(url, data={"username": "...", "password": "..."})
